@@ -100,7 +100,8 @@ a, a span{
     color:#fff;
     font-weight: bold;
 }
-
+/*a class that takes up enough space to account for the navigation bar, so that the content for each page is pushed to the appropriate place. */
+.page-padding {height:90px; width:100%;}
 
 #page1{
     padding-top: 200px;
@@ -130,7 +131,7 @@ a, a span{
     opacity:1;
     transition: opacity 0.2s ease 0.6s;
     /*background: none repeat scroll 0 0 #cca851;*/
-    background: url("images/PaperAirplane.png") no-repeat scroll left top transparent;
+    background: url("myWebsite/images/PaperAirplane.png") no-repeat scroll left top transparent;
     color: #cca851;
     display: block;
     font-family: "proxima-nova", sans-serif;
@@ -142,14 +143,18 @@ a, a span{
     text-align: center;
     width:180px;
 }
-#page2 {
+#page2, #page3, #page4, #page5 {
     display: block;
-    margin-bottom: 50px;
     min-height: 1000px;
-    background-color:yellow;
+    margin-bottom: 50px;
 }
 #page2 .container{
     width: 728px;
+}
+#page3, #page4, #page5 .container{
+    width: 768px;
+        background-color:yellow;
+        text-align: center;
 }
 #page2 .portfolio{
     display: block;
@@ -189,11 +194,4 @@ a, a span{
     left: -728px;
     width: 1000%;
 }*/
-#page3, #page4, #page5 {
-    display: block;
-    margin-bottom: 50px;
-    min-height: 1000px;
-    background-color:blue;
-}
-
 
