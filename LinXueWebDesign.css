@@ -255,9 +255,10 @@ img{
     font-size: 12px;
     line-height:12px;
 }
-/*
-#projects  .clr {
-    opacity: 0;
-    transition: all 0.2s ease-in 0s;
-    z-index: 1;
-}*/
+span.imgswap1{
+    background-image:url(images/icon-01.jpg");
+    background-repeat:no-repeat; display: block;
+}
+span.imgswap1:hover img {
+    visibility: hidden;
+}
