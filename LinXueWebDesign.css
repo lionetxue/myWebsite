@@ -1,4 +1,4 @@
-html, body, nav, div, span, table, ul, li, dl, dt, dd {
+html, body, nav, div, span, table, ul, li, dl, dt, dd, projects, article, img, .item, .info-wrap,.category, h1,h2,h3,h4 {
     border: 0 none;
     font: inherit;
     margin:0;
@@ -116,7 +116,7 @@ a, a span{
 }
 #page1 h1{
     margin-bottom:0;
-    font-size: 60px;
+    font-size: 50px;
     color: #292627;
 }
 #page1 h3 {
@@ -147,16 +147,16 @@ a, a span{
     min-height: 1000px;
 }
 #page2 .container{
-    width: 728px;
+    width: 768px;
 }
 #page3, #page4, #page5 .container{
     width: 768px;
 }
 
-#page2 .slideshow{
+#page2 #slideshow{
     display: block;
-    height: 380px;
-    width:728px;
+    height: 384px;
+    width:768px;
     margin: 0 auto;
     padding:0;
     clear: both;
@@ -166,24 +166,98 @@ a, a span{
     position: absolute;
     left:0;
     top:0;
-    height: 380px;
-    width:728px;
+    height: 384px;
+    width:768px;
 }
 .slide-image{
-    height: 380px;
-    width: 728px;
+    height: 384px;
+    width: 768px;
+}
+#projects {
+    display: block;
+    position: relative;
+    margin:0 auto;
+    padding:0;
+    width: 768px;
+}
+
+article{
+    display: block;
+    /*crucial for images to display horizontaly*/
+    float: left;
 }
 /*
-.slides_container{
-    overflow: hidden;
+    height: 50%;
+    font-family: "proxima-nova",sans-serif;
+    font-style: normal;
+    font-weight: normal;
     position: relative;
-    display: block;
-    width: 100%;
+*/
+.item{
+    display: inline-block;
+    float: left;
+    height: 50%;
+    position: relative;
 }
-.slides_control{
-    position: relative;
-    height: 352px;
-    left: -728px;
-    width: 1000%;
-}*/
+img{
+    /*crucial*/
+    position: absolute;
+    border: 0 none;
+    left:0;
+    top:0;
+    /*crucial*/
+    width: auto;
+    z-index:1;
+}
+.item-large {
+    width:384px;
+    height: 192px;
+}
+.item-small {
+    width:192px;
+    height: 192px;
+}
 
+#projects a {
+    color: #d9593d;
+    text-decoration: none;
+    transition: all 0.1s ease-in 0s;
+}
+.info-wrap{
+    display: block;
+    float: left;
+    height:50%;
+    width: auto;
+    position: relative;
+    /*arrange the info text on top of the image*/
+    z-index:2;
+}
+.category {
+    top: 122px;
+    background: none repeat scroll 0 0 rgba(39, 33, 35, 0.9);
+    height: 40px;
+    left: 0;
+    padding: 15px 0;
+    position: absolute;
+    text-align: center;
+    transition: all 0.1s ease-in 0s;
+    width: 192px;
+}
+.category h4{
+    color: #cca851;
+    font-size: 16px;
+    font-weight: bold;
+    margin:0;
+    text-transform:uppercase;
+}
+.category p{
+    color: #cca851;
+    font-size: 12px;
+    line-height:12px;
+}
+/*
+#projects  .clr {
+    opacity: 0;
+    transition: all 0.2s ease-in 0s;
+    z-index: 1;
+}*/
