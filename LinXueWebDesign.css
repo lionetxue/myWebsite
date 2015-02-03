@@ -33,14 +33,15 @@ header {
     margin:0 auto;
     padding:0;
     position:relative;
+    width:768px;
 }
-  .container:after{
+ .container:after{
     clear:both;
     content: " ";
     display: block;
     height: 0;
     visibility: hidden;
-  } 
+  }  
 header .container{
     height: 80px;
     width: 768px;
@@ -109,7 +110,6 @@ a, a span{
 }
 #page1 h2 {
     color: #292627;
-    font-family: "proxima-nova",sans-serif;
     font-size: 46px;
     font-weight: 100;
     margin-bottom: 5px;
@@ -133,7 +133,6 @@ a, a span{
     background: url("images/PaperAirplane.png") no-repeat scroll left top transparent;
     color: #cca851;
     display: block;
-    font-family: "proxima-nova", sans-serif;
     font-size:22px;
     font-weight:600;
     height:60px;
@@ -144,13 +143,7 @@ a, a span{
 }
 #page2, #page3, #page4, #page5 {
     display: block;
-    min-height: 1000px;
-}
-#page2 .container{
-    width: 768px;
-}
-#page3, #page4, #page5 .container{
-    width: 768px;
+    min-height: 400px;
 }
 
 #page2 #slideshow{
@@ -186,20 +179,14 @@ article{
     /*crucial for images to display horizontaly*/
     float: left;
 }
-/*
-    height: 50%;
-    font-family: "proxima-nova",sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    position: relative;
-*/
+
 .item{
     display: inline-block;
     float: left;
     height: 50%;
     position: relative;
 }
-img{
+.item img{
     /*crucial*/
     position: absolute;
     border: 0 none;
@@ -255,10 +242,56 @@ img{
     font-size: 12px;
     line-height:12px;
 }
-span.imgswap1{
-    background-image:url(images/icon-01.jpg");
-    background-repeat:no-repeat; display: block;
+
+#page3{
+    padding-top: 50px;
 }
-span.imgswap1:hover img {
-    visibility: hidden;
+#page3 h2{
+    text-align: center;
+    margin-bottom: 40px;
+     color: #cca851;
+     font-size:30px;
+     font-weight:800;
+     line-height: 1em;
+     text-transform: uppercase;
+}
+#page3 p{
+    font-size:15px;
+    font-style:normal;
+    font-weight: 400;
+    line-height:1.5;
+}
+#aboutme{
+    width: 150px;
+    float :right;
+    margin-left: 50px;
+}
+#page4 h2{
+    text-align: center;
+    margin-bottom: 40px;
+     color: #cca851;
+     font-size:30px;
+     font-weight:800;
+     line-height: 1em;
+     text-transform: uppercase;
+}
+#slideshow-testimonies{
+    display: block;
+    height: 384px;
+    width:768px;
+    margin: 0 auto;
+    padding:0;
+    clear: both;
+    position: relative;
+}
+#page4 p{
+    font-size:15px;
+    font-style:normal;
+    font-weight: 400;
+    line-height:1.5;
+}
+#page4 h4{
+    color: #cca851;
+    font-weight:600;
+    text-align: center;
 }

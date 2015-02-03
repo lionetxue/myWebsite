@@ -2,6 +2,8 @@
 
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">    
     <link href="LinXueWebDesign.css" type="text/css" rel="stylesheet" />
     <link rel="shortcut icon" href="images/NameLogo-red.ico">
     <title>Lin Xue - Designer</title>
@@ -17,26 +19,12 @@
                 <li><a id="nav-home" href="#page1"> HOME </a></li>
                 <li><a id="nav-works" href="#works"> WORKS </a></li>
                 <li><a id="nav-about" href="#about"> ABOUT </a></li>
-                <li><a id="nav-testimony" href="#testimony"> TESTIMONY </a></li>
+                <li><a id="nav-testimonies" href="#testimonies"> TESTIMONIES </a></li>
                 <li><a id="nav-contact"  href="#contact"> CONTACT </a></li>
             </ul>
         </nav>
     </div>
 
- <!--   <script type="text/javascript">
-        var _gaq = _gaq || [];
-        var pluginUrl =
-        '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
-        _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
-        _gaq.push(['_setAccount', 'UA-6033730-2']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
-    -->
 </header>
 <div id="page1">
   <a id="home"></a>
@@ -56,13 +44,7 @@
         <div id="slideshow">
                 <div class="slides">
                     <img class="slide-image" src="images/slide-1.jpg">
-                <!--    <div class="info">
-                        <h4>test</h4>
-                        <div class="description">
-                            Blablabla
-                        </div>
-                        <a class="linkto" tabindex="-1" href="#" target="_blank"></a>
-                    </div>-->
+    
                 </div>
                 <div class="slides">
                     <img class="slide-image" src="images/slide-2.jpg">
@@ -190,8 +172,7 @@
                          onmouseover="this.src='images/icon-07.jpg';"
                          onmouseout="this.src='images/icon-07.jpg';">
                 </a>
-            </article>
-          
+            </article>          
         </div>
     </div>
 </div>
@@ -200,16 +181,46 @@
   <a id="about"></a>
   <div class="page-padding"></div>
   <div class="container">
-    about page content goes here.
+    <h2>About Me</h2>
+    <p><img id="aboutme" src="images/aboutme.jpg" />
+        Hey, I'm Lin. I am an interactive designer who strives to marry the love of design and coding. </p>
+    <p>Most recently I worked as graphic designer for <a href="http://templetonla.com/">Templeton Landscape Architecture & Planning</a>.
+    In the past, I studied bioinformatics and developed a
+    <a href="http://uknowledge.uky.edu/cgi/viewcontent.cgi?article=1475&context=gradschool_theses">
+        visualization tool</a> to analyze gene expression data.</p>
+    <p> While at Cornell, I was lucky enough to collaborate with many talents from various background,
+    one of such teamwork lead to the winning of the 5th Ed Bacon Student Design competition.</p>
+    <p> I live in Ithaca, NY with my husband and our son, a busy toddler who constantly wants to help mommy on the keyboard. </p>
+    <p> <a href="#contact">Drop me a line</a> if you would like to work with me.</p>
+    <p> Thanks for visiting!</p>
   </div>
 </div>
 
 <div id="page4">
-  <a id="testimony"></a>
+  <a id="testimonies"></a>
   <div class="page-padding"></div>
   <div class="container">
-    testimony page content goes here.
+    <h2>Testimonies</h2>
+    <div id="slideshow-testimonies">
+        <div class="slides">
+            <p>"Lin has a beautiful sensitivity to the world around her and is an excellent designer and graphic artist."</p>
+            <h4>Tom Breiten, Designer at Templeton Landscape Architecture and Planning<h4>
+        </div>
+        <div class="slides">
+            <p>"Lin possesses the qualities of a scientist, a planner, and a creative artist who can think outside of the box. Her solid educational background from two of the most prestigious schools in the world - Fudan University and Cornell University speaks for itself. I was constantly amazed at her ability to manage many difficult tasks simultaneously in an extremely efficient manner without showing any sign of stress. Most importantly, Lin is a wonderful person with an upbeat personality, which makes it very pleasant to work with her."</p>
+            <h4>Jane Wu, Associate Landscape Designer at City of San Jose</h4>
+        </div>
+        <div class="slides">
+            <p>"I had the pleasure of having Lin on my team for our Capstone project at Cornell where we were analyzing a development opportunity of the Wheaton Metro Station and surrounding bus bays for our client the B.F. Saul Companies. Lin was an integral part of our team, and was always happy to help. She is a hard working, motivated, and genuinely kind person, and was a valued member of our team. I am happy to recommend her, and wish her nothing but the best."</p>
+            <h4>Duke Fairchild, Vice President at The Greenwich Group International</h4>
+        </div>
+        <div class="slides">
+            <p>"Lin worked on a capstone workshop studio that I led in 2011, and she was a consistently superb contributor. She is very thoughtful, and did a great job seeking to understand and then balance planning policy, design quality, and development considerations. She demonstrated excellent design and planning abilities, as well as solid interpersonal skills. I was pleased to work with her."</p>
+            <h4>Mark Foerster, Professor at Cornell University</h4>
+        </div>
+    
     </div>
+  </div>
 </div>
 
 <div id="page5">
@@ -288,6 +299,25 @@ $(document).ready(function(){
         //adjust the timing: 2000 is 2 seconds, change it accordingly
         .appendTo('#slideshow');
     },  3000);
+});
+</script>
+
+<!-- auto-play slideshow-testimonies-->
+<script type="text/javascript">
+$(document).ready(function(){
+    
+$("#slideshow-testimonies > div:gt(0)").hide();
+
+    startInterval();
+
+setInterval(function() { 
+  $('#slideshow-testimonies > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow-testimonies');
+},  10000);
 });
 </script>
 
