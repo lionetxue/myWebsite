@@ -227,8 +227,35 @@
   <a id="contact"></a>
 <div class="page-padding"></div>
   <div class="container">
-    <h2>Say Hello!</h2>
+    <h2>Get in touch</h2>
+    <form method="post" name="contact_form"
+    action="contact-form-handler.php">
+        <label>Name:</label>
+        <input type="text" name="name">
+        <label>Email:</label>
+        <input type="text" name="email">
+        <label>Message:</label>
+        <textarea name="message"></textarea>
+        <input id= "submit" type="submit" value="Submit">
+    </form>
+    <div class="page-padding"></div>
+    <div id="followme">
+        <h4>Follow Me</h4>
+            <a href="https://www.linkedin.com/in/linxue">
+            <img class="socialmedia-icon"
+                         src="images/Linkedin-bw.png"
+                         onmouseover="this.src='images/Linkedin.png';"
+                         onmouseout="this.src='images/Linkedin-bw.png';">
+            </a>
+            <a href="https://www.facebook.com/lionetxue">
+            <img class="socialmedia-icon"
+                         src="images/Facebook-bw.png"
+                         onmouseover="this.src='images/Facebook.png';"
+                         onmouseout="this.src='images/Facebook-bw.png';">
+            </a>
     </div>
+    </div>
+  <div class="page-padding"></div>
 </div>
 
 
@@ -319,5 +346,14 @@ setInterval(function() {
 });
 </script>
 
+
+<!-- to validate contact form-->
+<script language="JavaScript">
+var frmvalidator  = new Validator("contactform");
+frmvalidator.addValidation("name","req","Please provide your name");
+frmvalidator.addValidation("email","req","Please provide your email");
+frmvalidator.addValidation("email","email",
+  "Please enter a valid email address");
+</script>
 </body>
 </html>

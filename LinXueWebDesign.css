@@ -143,7 +143,7 @@ a, a span{
 }
 #page2, #page3, #page4, #page5 {
     display: block;
-    min-height: 400px;
+   /* min-height: 300px; */
 }
 
 #page2 #slideshow{
@@ -266,6 +266,10 @@ article{
     float :right;
     margin-left: 50px;
 }
+#page3 a{
+    color: #cca851;
+    font-weight:500;
+}
 #page4 h2{
     text-align: center;
     margin-bottom: 40px;
@@ -277,12 +281,19 @@ article{
 }
 #slideshow-testimonies{
     display: block;
-    height: 384px;
+    height: 300px;
     width:768px;
     margin: 0 auto;
     padding:0;
     clear: both;
     position: relative;
+}
+#page4 .pages{
+    position: absolute;
+    left:0;
+    top:0;
+    height: 300px;
+    width:768px;
 }
 #page4 p{
     font-size:15px;
@@ -295,6 +306,7 @@ article{
     font-weight:600;
     text-align: center;
 }
+
 #page5 h2{
     text-align: center;
     margin-bottom: 40px;
@@ -303,4 +315,69 @@ article{
      font-weight:800;
      line-height: 1em;
      text-transform: uppercase;
+}
+label{
+    display: block;
+    margin-top:20px;
+    letter-spacing: 2px;
+}
+
+/* Centre the form within the page */
+form {
+    margin:0 auto;
+    width:459px;
+}
+
+/* Style the text boxes */
+input, textarea {
+	width:439px;
+	height:27px;
+	background:#efefef;
+	border:1px solid #dedede;
+	padding:10px;
+	margin-top:3px;
+	font-size:0.9em;
+	color:#3a3a3a;
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+         border-radius:5px;
+}
+
+textarea {
+	height:213px;
+	background:url(images/textarea-bg.jpg) right no-repeat #efefef;
+}
+
+input:focus, textarea:focus {
+    border:1px solid #97d6eb;
+}
+
+#submit {
+    width:127px;
+    height:38px;
+    background-color: #cca851;
+   /* background:url(images/submit.jpg);
+    text-indent:-9999px; (trick to hide the Submit text)*/
+    border:none;
+    margin-top:20px;
+    cursor:pointer;
+}
+
+#submit:hover {
+	    opacity:.9;
+	}
+        
+#followme {
+    text-align: center;
+}
+#followme h4{
+    color: #cca851;
+    font-weight:600;
+    margin-bottom:20px;
+}
+#followme p{
+    font-size:15px;
+    font-style:normal;
+    font-weight: 400;
+    line-height:1.5;
 }
