@@ -5,34 +5,40 @@
 		<link href="contact-form.css" type="text/css" rel="stylesheet" />
 	</head>
     <body>
-$errors = '';
-$myemail = 'lionetxue@gmail.com';//<-----Put Your email address here.
-if(empty($_POST['name'])  ||
-   empty($_POST['email']) ||
-   empty($_POST['message']))
-{
-    $errors .= "\n Error: all fields are required";
-}
-$name = $_POST['name'];
-$email_address = $_POST['email'];
-$message = $_POST['message'];
-if (!preg_match(
-"/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i",
-$email_address))
-{
-    $errors .= "\n Error: Invalid email address";
-}
+<?php
+$field_name = $_POST['cf_name'];
+$field_email = $_POST['cf_email'];
+$field_message = $_POST['cf_message'];
 
-if( empty($errors))
-{
-$to = $myemail;
-$email_subject = "Contact form submission: $name";
-$email_body = "You have received a new message. ".
-" Here are the details:\n Name: $name \n ".
-"Email: $email_address\n Message \n $message";
-$headers = "From: $myemail\n";
-$headers .= "Reply-To: $email_address";
-mail($to,$email_subject,$email_body,$headers);
-//redirect to the 'thank you' page
-header('Location: contact-form-thank-you.html');
+$mail_to='lx58@cornell.edu';
+$subject='Message from a site visitor'.$field_name;
+
+$body_message ='From: '.$field_name."\n";
+$body_message.='E-mail: '.$field_email."\n";
+$body_message.= 'Message: '.$field_message;
+
+$headers = "From: $cf_email\r\n";
+$headers .="Reply-To:$cf_email\r\n";
+
+$mail_status = mail ($mail_to, $subject, $body_message, $headers);
+
+// if the mail() function executed 
+if($mail_status){ ?>
+<script language="javascript" type="text/javascript">
+    //print a message
+    alert('Thank you for the message.  I will contact you shortly.');
+    //Redirect to some page of the site.
+    window.location = 'LinXueWebDesign.html';
+</script>
+<?php
 }
+//if the mail() fucntion fails
+else{ ?>
+<script language="javascript" type="text/javascript">
+    //print a message
+    alert("Message failed.  Please send an email to lx58@cornell.edu");
+    //Redirect to some page.
+    window.location= 'LinXueWebDesign.html#contact';
+</script>
+<?php
+} ?>
