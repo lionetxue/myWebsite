@@ -28,7 +28,7 @@ if($mail_status){ ?>
     //print a message
     alert('Thank you for the message.  I will contact you shortly.');
     //Redirect to some page of the site.
-    window.location = 'LinXueWebDesign.html';
+    window.location = 'index.html';
 </script>
 <?php
 }
