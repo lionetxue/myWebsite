@@ -38,7 +38,7 @@ else{ ?>
     //print a message
     alert("Message failed.  Please send an email to lx58@cornell.edu");
     //Redirect to some page.
-    window.location= 'LinXueWebDesign.html#contact';
+    window.location= 'index.html#contact';
 </script>
 <?php
 } ?>
