@@ -91,6 +91,8 @@ a, a span{
     text-decoration:none;
     cursor: pointer;
     transition: opacity 0.5s ease 0s, color 0.5s ease 0s, background-color 0.5s ease 0s;
+    color: #cca851;
+    font-weight:500;
 }
 .mainnav ul li a:hover {
     /*
@@ -114,10 +116,11 @@ a, a span{
     font-weight: 100;
     margin-bottom: 5px;
 }
-#page1 h1{
+h1{
     margin-bottom:0;
     font-size: 50px;
     color: #292627;
+    text-align: center;
 }
 #page1 h3 {
     margin-bottom: 45px;
@@ -141,7 +144,7 @@ a, a span{
     text-align: center;
     width:180px;
 }
-#page2, #page3, #page4, #page5 {
+#page2, #page3, #page4, #page5, #page6 {
     display: block;
    /* min-height: 300px; */
 }
@@ -243,7 +246,29 @@ article{
     line-height:12px;
 }
 
-#page3{
+#page3 #button{
+    opacity:1;
+    transition: opacity 0.2s ease 0.6s;
+    /*background: none repeat scroll 0 0 #cca851;*/
+    background: url("images/door.jpg") no-repeat scroll left top transparent;
+    color: #cca851;
+    display: block;
+    font-size:22px;
+    font-weight:600;
+    height:208px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width:180px;
+}
+#page3, #page4, #page5 p{
+    font-size:15px;
+    font-style:normal;
+    font-weight: 400;
+    line-height:1.5;
+}
+
+#page4{
     padding-top: 50px;
 }
  h2{
@@ -255,20 +280,11 @@ article{
      line-height: 1em;
      text-transform: uppercase;
 }
-#page3 p{
-    font-size:15px;
-    font-style:normal;
-    font-weight: 400;
-    line-height:1.5;
-}
+
 #aboutme{
     width: 150px;
     float :right;
     margin-left: 50px;
-}
-#page3 a{
-    color: #cca851;
-    font-weight:500;
 }
 
 #slideshow-testimonies{
@@ -280,20 +296,15 @@ article{
     clear: both;
     position: relative;
 }
-#page4 .pages{
+#page5 .pages{
     position: absolute;
     left:0;
     top:0;
     height: 300px;
     width:768px;
 }
-#page4 p{
-    font-size:15px;
-    font-style:normal;
-    font-weight: 400;
-    line-height:1.5;
-}
-#page4 h4{
+
+#page5 h4{
     color: #cca851;
     font-weight:600;
     text-align: center;
@@ -370,4 +381,16 @@ input:focus, textarea:focus {
 }
 .page p{
     text-align: center;
+}
+#lab-index li{
+    display: block;
+    margin-left: 80px;
+}
+#lab-index li a, a span{
+     /* Remove underline */
+    text-decoration:none;
+    cursor: pointer;
+    transition: opacity 0.5s ease 0s, color 0.5s ease 0s, background-color 0.5s ease 0s;
+    color: #cca851;
+    font-weight:500;
 }
