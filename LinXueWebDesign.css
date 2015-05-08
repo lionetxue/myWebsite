@@ -9,6 +9,7 @@ html, body {
     color:#000;
     margin:0;
     padding:0;
+    font-size: 100%;
 }
 body{
     background-color:#f6f6f6;
@@ -18,9 +19,28 @@ body{
     font-style:normal;
     font-weight: normal;
     overflow-x:hidden;
-    text-rendering: optimizelegibility;
     line-height: 1;
 }
+/* responsive :ensure that your images will never be bigger than their parent container.  */
+img { max-width: 100%;
+    height: auto;
+}
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}
+}
+/* Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+}
+/*Reponsive font sizes */
+@media (min-width: 640px) { body {font-size:1rem;} }
+@media (min-width:960px) { body {font-size:1.2rem;} }
+@media (min-width:1100px) { body {font-size:1.5rem;} }
+
+
 header {
     background-color: white;
     position: fixed;
@@ -33,7 +53,8 @@ header {
     margin:0 auto;
     padding:0;
     position:relative;
-    width:768px;
+    width:80%;
+    max-width:1068px;
 }
  .container:after{
     clear:both;
@@ -41,66 +62,89 @@ header {
     display: block;
     height: 0;
     visibility: hidden;
-  }  
+  }
+
 header .container{
     height: 80px;
-    width: 768px;
-    position: relative;
     transition: height 0.5s ease 0s;
-    margin: 0 auto;
-    padding: 0;
   }
 #logo {
     margin-top: 10px;
+    margin-left: 10px;
     height: 60px;
 }
-header .mainnav {
-    top:50px;
+header nav {
+    bottom: 10px;
     right: 20px;
     display: block;
     position: absolute;
-    transition: top 0.5s ease 0s; 
+    transition: top 0.5s ease 0s;
     width: 100%;
 }
+/* Responsive menu */
+nav select{
+    display: none;
+}
+@media (max-width: 767px) {
+    nav ul     { display: none; }
+    nav select {
+        display: inline-block;
+        margin-left: 120px;
+        font-size: 15px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+}
+@media (min-width: 768px) {
 
-header .mainnav ul{
-    display: inline-block;
-    float: right;
-}
-ul{
-    list-style: outsidde none none;
+    header nav ul {
+        display: inline-block;
+        float: right;
+    }
+
+    ul {
+        list-style: none outside none;
+    }
+
+    header nav ul li {
+        display: inline-block;
+        float: left;
+        margin-left: 30px;
+    }
+
+    nav ul li a:hover {
+        /*
+        RGBA background for transparancy:
+        last number(0.05) is the transparency
+        */
+        background: RGBA(0, 0, 0, 0.5);
+        color: #fff;
+        font-weight: bold;
+    }
 }
 
-header .mainnav ul li{
-    display: inline-block;
-    float: left;
-    margin-left: 30px;
+
+li {
+    line-height: 18px;
+    margin-bottom: 12px;
 }
-li{
-    line-height:18px;
-    margin-bottom:12px;
-}
-li a{
+
+li a {
     color: #181818;
     font-size: 15px;
     font-weight: 400;
     text-transform: uppercase;
 }
-a, a span{
-     /* Remove underline */
-    text-decoration:none;
+
+a, a span {
+    /* Remove underline */
+    text-decoration: none;
     cursor: pointer;
     transition: opacity 0.5s ease 0s, color 0.5s ease 0s, background-color 0.5s ease 0s;
+    color: #cca851;
+    font-weight: 500;
 }
-.mainnav ul li a:hover {
-    /*
-    RGBA background for transparancy:
-    last number(0.05) is the transparency
-    */
-    background: RGBA(0,0,0, 0.5);
-    color:#fff;
-    font-weight: bold;
-}
+
 /*a class that takes up enough space to account for the navigation bar, so that the content for each page is pushed to the appropriate place. */
 .page-padding {height:90px; width:100%;}
 
@@ -114,19 +158,20 @@ a, a span{
     font-weight: 100;
     margin-bottom: 5px;
 }
-#page1 h1{
+h1{
     margin-bottom:0;
-    font-size: 50px;
+    font-size: 80px;
     color: #292627;
+    text-align: center;
 }
 #page1 h3 {
     margin-bottom: 45px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 300;
 }
-#page1 #button{
+#button-contact{
     opacity:1;
     transition: opacity 0.2s ease 0.6s;
     /*background: none repeat scroll 0 0 #cca851;*/
@@ -141,37 +186,57 @@ a, a span{
     text-align: center;
     width:180px;
 }
-#page2, #page3, #page4, #page5 {
+#page2, #page3, #page4, #page5, #page6 {
     display: block;
-   /* min-height: 300px; */
+    /*min-height: 300px;*/
 }
 
-#page2 #slideshow{
-    display: block;
-    height: 384px;
-    width:768px;
-    margin: 0 auto;
-    padding:0;
-    clear: both;
-    position: relative;
+@media (min-width: 1325px) {
+    #slideshow {
+        display: block;
+        width: 1060px;
+        height: 530px;
+        float:left;
+        padding: 0;
+        clear: both;
+        position: relative;
+    }
 }
+@media (min-width: 994px) and (max-width: 1324px) {
+    #slideshow {
+        display: block;
+        width: 795px;
+        height: 398px;
+        float:left;
+        padding: 0;
+        clear: both;
+        position: relative;
+    }
+}
+@media (max-width:993px){
+    #slideshow {
+        display: block;
+        width: 530px;
+        height: 265px;
+        float:left;
+        padding: 0;
+        clear: both;
+        position: relative;
+    }
+}
+
  .slides{
     position: absolute;
     left:0;
     top:0;
-    height: 384px;
-    width:768px;
-}
-.slide-image{
-    height: 384px;
-    width: 768px;
+     width:100%
 }
 #projects {
     display: block;
     position: relative;
     margin:0 auto;
     padding:0;
-    width: 768px;
+    width: 100%;
 }
 
 article{
@@ -196,13 +261,10 @@ article{
     width: auto;
     z-index:1;
 }
-.item-large {
-    width:384px;
-    height: 192px;
-}
+
 .item-small {
-    width:192px;
-    height: 192px;
+    width:265px;
+    height: 265px;
 }
 
 #projects a {
@@ -220,7 +282,7 @@ article{
     z-index:2;
 }
 .category {
-    top: 122px;
+    top: 195px;
     background: none repeat scroll 0 0 rgba(39, 33, 35, 0.9);
     height: 40px;
     left: 0;
@@ -228,7 +290,7 @@ article{
     position: absolute;
     text-align: center;
     transition: all 0.1s ease-in 0s;
-    width: 192px;
+    width: 265px;
 }
 .category h4{
     color: #cca851;
@@ -243,7 +305,28 @@ article{
     line-height:12px;
 }
 
-#page3{
+#page3 #button-lab{
+    opacity:1;
+    transition: opacity 0.2s ease 0.6s;
+    /*background: none repeat scroll 0 0 #cca851;*/
+    background: url("images/door.jpg") no-repeat scroll left top transparent;
+    color: #cca851;
+    display: block;
+    font-size:22px;
+    font-weight:600;
+    height:208px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width:180px;
+}
+#page3, #page4, #page5 p{
+    font-style:normal;
+    font-weight: 400;
+    line-height:1.5;
+}
+
+#page4{
     padding-top: 50px;
 }
  h2{
@@ -255,47 +338,34 @@ article{
      line-height: 1em;
      text-transform: uppercase;
 }
-#page3 p{
-    font-size:15px;
-    font-style:normal;
-    font-weight: 400;
-    line-height:1.5;
-}
+
 #aboutme{
     width: 150px;
     float :right;
     margin-left: 50px;
 }
-#page3 a{
-    color: #cca851;
-    font-weight:500;
-}
 
 #slideshow-testimonies{
     display: block;
     height: 300px;
-    width:768px;
+    width: 100%;
     margin: 0 auto;
     padding:0;
     clear: both;
     position: relative;
 }
-#page4 .pages{
+#page5 .pages{
     position: absolute;
     left:0;
     top:0;
-    height: 300px;
-    width:768px;
+    /*min-height: 300px;*/
+    width:100%;
 }
-#page4 p{
-    font-size:15px;
-    font-style:normal;
-    font-weight: 400;
-    line-height:1.5;
-}
-#page4 h4{
+
+#page5 h4{
     color: #cca851;
-    font-weight:600;
+    font-size: 16px;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -365,9 +435,26 @@ input:focus, textarea:focus {
     line-height:1.5;
 }
 
-.page img{
-    width:100%;
-}
 .page p{
     text-align: center;
+}
+#lab-index li{
+    display: block;
+    margin-left: 80px;
+}
+#lab-index li a, a span{
+     /* Remove underline */
+    text-decoration:none;
+    cursor: pointer;
+    transition: opacity 0.5s ease 0s, color 0.5s ease 0s, background-color 0.5s ease 0s;
+    color: #cca851;
+    font-weight:500;
+}
+/* smaller container on project pages */
+.page {
+    margin:0 auto;
+    padding:0;
+    position:relative;
+    width:80%;
+    max-width:768px;
 }

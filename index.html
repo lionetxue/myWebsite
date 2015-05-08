@@ -3,21 +3,41 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">    
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <!-- Responsive site:set the view on all screens at a 1×1 aspect ratio and allow users to zoom into the layout by pinching  -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+
     <link href="LinXueWebDesign.css" type="text/css" rel="stylesheet" />
     <link rel="shortcut icon" href="images/NameLogo-red.ico">
     <title>Lin Xue - Designer</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="google-analytics.js" type="text/javascript"></script>
+    <script src="smoothScroll.js" type="text/javascript"></script>
+    <script src="slideshow.js" type="text/javascript"></script>
+    <script src="dropdown-menu.js" type="text/javascript"></script>
 </head>
 
 <body>
 <header>
     <div class="container">
-        <a href="#about"><img id="logo" src="images/NameLogo-red.png"/></a> 
-        <nav class="mainnav">
+        <a id="logo-about" href="#about">
+            <img id="logo" src="images/NameLogo-red.png" alt="logo"></a>
+        <nav>
+            <select>
+                <option value="" selected="selected">Go to...</option>
+                <option value="#page1">HOME</option>
+                <option value="#works"> WORKS</option>
+                <option value="#lab"> LAB</option>
+                <option value="#about"> ABOUT </option>
+                <option value="#testimonies"> TESTIMONIES </option>
+                <option value="#contact"> CONTACT </option>
+            </select>
             <ul>
                 <li><a id="nav-home" href="#page1"> HOME </a></li>
                 <li><a id="nav-works" href="#works"> WORKS </a></li>
+                <li><a id="nav-lab" href="#lab"> LAB </a></li>
                 <li><a id="nav-about" href="#about"> ABOUT </a></li>
                 <li><a id="nav-testimonies" href="#testimonies"> TESTIMONIES </a></li>
                 <li><a id="nav-contact"  href="#contact"> CONTACT </a></li>
@@ -32,7 +52,7 @@
         <h2>I LOVE CREATING</h2>
         <h1>GRAPHICS AND WEBSITES</h1>
         <h3>I do: design, html5 & css, php, sql, Javascript</h3>
-        <a id="button" title="Contact me!" href="#contact"> Contact me!</a>
+        <a id="button-contact" title="Contact me!" href="#contact"> Contact me!</a>
     </div>
 </div>
 
@@ -43,31 +63,33 @@
     <div class="container">
         <div id="slideshow">
                 <div class="slides">
-                    <img class="slide-image" src="images/slide-1.jpg"/>
+                    <img class="slide-image" src="images/slide-1.jpg" alt="slide 1">
     
                 </div>
                 <div class="slides">
-                    <img class="slide-image" src="images/slide-2.jpg"/>
+                    <img class="slide-image" src="images/slide-2.jpg" alt="slide 2">
                 </div>
                 <div class="slides">
-                    <img class="slide-image" src="images/slide-3.jpg"/>
+                    <img class="slide-image" src="images/slide-3.jpg" alt="slide 3">
                 </div>
                 <div class="slides">
-                    <img class="slide-image" src="images/slide-4.jpg"/>
+                    <img class="slide-image" src="images/slide-4.jpg" alt="slide 4">
                 </div>
                 <div class="slides">
-                    <img class="slide-image" src="images/slide-5.jpg"/>
+                    <img class="slide-image" src="images/slide-5.jpg" alt="slide 5">
                 </div>
                 <div class="slides">
-                    <img class="slide-image" src="images/slide-6.jpg"/>
+                    <img class="slide-image" src="images/slide-6.jpg" alt="slide 6">
                 </div>
                 <div class="slides">
-                    <img class="slide-image" src="images/slide-7.jpg"/>
+                    <img class="slide-image" src="images/slide-7.jpg" alt="slide 7">
                 </div>
                 <div class="slides">
-                    <img class="slide-image" src="images/slide-8.jpg"/>
+                    <img class="slide-image" src="images/slide-8.jpg" alt="slide 8">
                 </div> 
         </div>
+    </div>
+    <div class="container">
         <div id="projects">
             <article>
                 <a href="project1.html">
@@ -79,8 +101,9 @@
                     </div>
                     <img class="item item-small"
                          src="images/icon-01-bw.jpg"
+                         alt="icon 1"
                          onmouseover="this.src='images/icon-01.jpg';"
-                         onmouseout="this.src='images/icon-01-bw.jpg';"/>
+                         onmouseout="this.src='images/icon-01-bw.jpg';">
                 </a>
             </article>
             
@@ -94,8 +117,9 @@
                 </div>
                  <img class="item item-small"
                          src="images/icon-02-bw.jpg"
+                         alt="icon 2"
                          onmouseover="this.src='images/icon-02.jpg';"
-                         onmouseout="this.src='images/icon-02-bw.jpg';"/>
+                         onmouseout="this.src='images/icon-02-bw.jpg';">
                 </a>
             </article>
             
@@ -109,8 +133,9 @@
                 </div>
                 <img class="item item-small"
                          src="images/icon-03-bw.jpg"
+                         alt = "icon 3"
                          onmouseover="this.src='images/icon-03.jpg';"
-                         onmouseout="this.src='images/icon-03-bw.jpg';"/>
+                         onmouseout="this.src='images/icon-03-bw.jpg';">
                 </a>
             </article>
             
@@ -124,8 +149,9 @@
                 </div>
                 <img class="item item-small"
                          src="images/icon-04-bw.jpg"
+                         alt = "icon 4"
                          onmouseover="this.src='images/icon-04.jpg';"
-                         onmouseout="this.src='images/icon-04-bw.jpg';"/>          
+                         onmouseout="this.src='images/icon-04-bw.jpg';">
                 </a>
             </article>
                       
@@ -137,13 +163,30 @@
                         <p>landscape architecture</p>
                     </div>
                 </div>
-                <img class="item item-large"
+                <img class="item item-small"
                          src="images/icon-05-bw.jpg"
+                         alt = "icon 5"
                          onmouseover="this.src='images/icon-05.jpg';"
-                         onmouseout="this.src='images/icon-05-bw.jpg';"/>
+                         onmouseout="this.src='images/icon-05-bw.jpg';">
                 </a>
             </article>
-            
+
+            <article>
+                <a href="http://www.strongstartwellness.com/">
+                    <div class="info-wrap">
+                        <div class="category">
+                            <h4>Strong Start</h4>
+                            <p>Branding,Web Design</p>
+                        </div>
+                    </div>
+                    <img class="item item-small"
+                         src="images/icon-08-bw.jpg"
+                         alt = "icon 8"
+                         onmouseover="this.src='images/icon-08.jpg';"
+                         onmouseout="this.src='images/icon-08-bw.jpg';">
+                </a>
+            </article>
+
              <article>
                 <a href="project6.html">
                 <div class="info-wrap">
@@ -154,8 +197,9 @@
                 </div>
                     <img class="item item-small"
                          src="images/icon-06-bw.jpg"
+                         alt = "icon 6"
                          onmouseover="this.src='images/icon-06.jpg';"
-                         onmouseout="this.src='images/icon-06-bw.jpg';"/>
+                         onmouseout="this.src='images/icon-06-bw.jpg';">
                 </a>
             </article>
              
@@ -169,8 +213,9 @@
                 </div>
                  <img class="item item-small"
                          src="images/icon-07.jpg"
+                         alt="icon 7"
                          onmouseover="this.src='images/icon-07.jpg';"
-                         onmouseout="this.src='images/icon-07.jpg';"/>
+                         onmouseout="this.src='images/icon-07.jpg';">
                 </a>
             </article>          
         </div>
@@ -178,15 +223,26 @@
 </div>
 
 <div id="page3">
+  <a id="lab"></a>
+  <div class="page-padding"></div>
+  <div class="container">
+    <h2>My Javascript Lab</h2>
+    <p> Hey, I'm Lin. Welcome to my lab. Inspired by Jennifer Dewalt's <a href="http://jenniferdewalt.com/">180 websites in 180 days</a>, I decide to start this lab and make awesome animations and user interface through tiny steps. </p>
+    <p> Follow me on <a href="https://github.com/lionetxue/Lin-Xue-s-Javascript-Lab">Github</a>, where I made all my code public.</p>
+    <a id="button-lab" title="Enter My Lab!" href="lab-index.html"> Enter My Lab!</a>
+  </div>
+</div>
+
+<div id="page4">
   <a id="about"></a>
   <div class="page-padding"></div>
   <div class="container">
     <h2>About Me</h2>
-    <p><img id="aboutme" src="images/aboutme.jpg" />
+    <p><img id="aboutme" src="images/aboutme.jpg" alt ="Lin Xue">
         Hey, I'm Lin. I am an interactive designer who strives to marry the love of design and coding. </p>
     <p>Most recently I worked as a graphic designer for <a href="http://templetonla.com/">Templeton Landscape Architecture & Planning</a>.
     In the past, I studied bioinformatics and developed a
-    <a href="http://uknowledge.uky.edu/cgi/viewcontent.cgi?article=1475&context=gradschool_theses">
+    <a href="http://uknowledge.uky.edu/cgi/viewcontent.cgi?article=1475&amp;context=gradschool_theses">
         visualization tool</a> to analyze gene expression data.</p>
     <p> While at Cornell, I was lucky enough to collaborate with many talented people from various backgrounds,
     one such collaboration led to the winning of the 5th Ed Bacon Student Design competition.</p>
@@ -196,7 +252,7 @@
   </div>
 </div>
 
-<div id="page4">
+<div id="page5">
   <a id="testimonies"></a>
   <div class="page-padding"></div>
   <div class="container">
@@ -224,9 +280,7 @@
 </div>
 
 
-
-
-<div id="page5">
+<div id="page6">
   <a id="contact"></a>
 <div class="page-padding"></div>
   <div class="container">
@@ -247,106 +301,29 @@
             <a href="https://www.linkedin.com/in/linxue">
             <img class="socialmedia-icon"
                          src="images/Linkedin-bw.png"
+                         alt= "Linkedin logo"
                          onmouseover="this.src='images/Linkedin.png';"
-                         onmouseout="this.src='images/Linkedin-bw.png';"/>
+                         onmouseout="this.src='images/Linkedin-bw.png';">
             </a>
+        <a href="https://github.com/lionetxue">
+            <img class="socialmedia-icon"
+                 src="images/GitHub-bw.png"
+                 alt="GitHub logo"
+                 onmouseover="this.src='images/GitHub.png';"
+                 onmouseout="this.src='images/GitHub-bw.png';">
+        </a>
             <a href="https://www.facebook.com/lionetxue">
             <img class="socialmedia-icon"
                          src="images/Facebook-bw.png"
+                         alt="Facebook logo"
                          onmouseover="this.src='images/Facebook.png';"
-                         onmouseout="this.src='images/Facebook-bw.png';"/>
+                         onmouseout="this.src='images/Facebook-bw.png';">
             </a>
     </div>
     </div>
   <div class="page-padding"></div>
+    <div class="page-padding"></div>
 </div>
-
-<!-- to smoothly scroll up and down page-->
-<script type="text/javascript">
-$(document).ready(function(){
-                $(".contactLink").click(function(){
-                    if ($("#contactForm").is(":hidden")){
-                        $("#contactForm").slideDown("slow");
-                    }
-                    else{
-                        $("#contactForm").slideUp("slow");
-                    }
-                });
-            });
-            function closeForm(){
-                $("#messageSent").show("slow");
-                setTimeout('$("#messageSent").hide();$("#contactForm").slideUp("slow")', 2000);
-           }
-
-$(document).ready(function() {
-  function filterPath(string) {
-    return string
-      .replace(/^\//,'')
-      .replace(/(index|default).[a-zA-Z]{3,4}$/,'')
-      .replace(/\/$/,'');
-  }
-  $('a[href*=#]').each(function() {
-    if ( filterPath(location.pathname) == filterPath(this.pathname)
-    && location.hostname == this.hostname
-    && this.hash.replace(/#/,'') ) {
-      var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
-      var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
-       if ($target) {
-         var targetOffset = $target.offset().top;
-         $(this).click(function() {
-           $('html, body').animate({scrollTop: targetOffset}, 1000);
-           var d = document.createElement("div");
-        d.style.height = "101%";
-        d.style.overflow = "hidden";
-        document.body.appendChild(d);
-        window.scrollTo(0,scrollToM);
-        setTimeout(function() {
-        d.parentNode.removeChild(d);
-            }, 10);
-           return false;
-         });
-      }
-    }
-  });
-});
-/*! Smooth Scroll - v1.4.5 - 2012-07-22
-* Copyright (c) 2012 Karl Swedberg; Licensed MIT, GPL */
-</script>
-
-<!-- to auto-play slideshow -->
-<script type="text/javascript">
-$(document).ready(function(){
-    
-    $("#slideshow > div:gt(0)").hide();
-    
-    setInterval(function() { 
-      $('#slideshow > div:first')
-        .fadeOut(1000)
-        .next()
-        .fadeIn(1000)
-        .end()
-        //adjust the timing: 2000 is 2 seconds, change it accordingly
-        .appendTo('#slideshow');
-    },  3000);
-});
-</script>
-
-<!-- auto-play slideshow-testimonies-->
-<script type="text/javascript">
-$(document).ready(function(){
-    
-$("#slideshow-testimonies > div:gt(0)").hide();
-
-setInterval(function() { 
-  $('#slideshow-testimonies > div:first')
-    .fadeOut(1000)
-    .next()
-    .fadeIn(1000)
-    .end()
-    .appendTo('#slideshow-testimonies');
-},  10000);
-});
-</script>
 
 
 <!-- to validate contact form-->
@@ -358,17 +335,6 @@ frmvalidator.addValidation("email","email",
   "Please enter a valid email address");
 </script>
 
-<!-- Google Analytics -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-61057708-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 </body>
 </html>
