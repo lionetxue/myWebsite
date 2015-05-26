@@ -35,7 +35,7 @@ img { max-width: 100%;
     #primary { width:100%; }
     #secondary { width:100%; margin:0; border:none; }
 }
-/*Reponsive font sizes */
+/*Responsive font sizes */
 @media (min-width: 640px) { body {font-size:1rem;} }
 @media (min-width:960px) { body {font-size:1.2rem;} }
 @media (min-width:1100px) { body {font-size:1.5rem;} }
@@ -53,9 +53,10 @@ header {
     margin:0 auto;
     padding:0;
     position:relative;
-    width:80%;
+    width:90%;
     max-width:1068px;
 }
+
  .container:after{
     clear:both;
     content: " ";
@@ -85,10 +86,32 @@ header nav {
 nav select{
     display: none;
 }
-@media (max-width: 767px) {
+/*get rid of fixed header and icon on mobile device, leaving only the floating menu*/
+@media (max-width: 640px) {
+    header {background:none;}
+    #logo-about{display: none;}
+    #logo{display:none;}
+    nav ul     { display: none; }
+    nav select{
+        display: inline-block;
+        /*for IE7 and older*/
+        *display: inline;
+        zoom: 1;
+        position: fixed;
+        top:10px;
+        left:10px;
+        font-size: 15px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+}
+@media (min-width: 641px) and (max-width: 767px) {
     nav ul     { display: none; }
     nav select {
         display: inline-block;
+        /*for IE7 and older*/
+        *display: inline;
+        zoom: 1;
         margin-left: 120px;
         font-size: 15px;
         font-weight: 400;
@@ -99,6 +122,9 @@ nav select{
 
     header nav ul {
         display: inline-block;
+        /*for IE7 and older*/
+        *display: inline;
+        zoom: 1;
         float: right;
     }
 
@@ -108,6 +134,9 @@ nav select{
 
     header nav ul li {
         display: inline-block;
+        /*for IE7 and older*/
+        *display: inline;
+        zoom: 1;
         float: left;
         margin-left: 30px;
     }
@@ -149,7 +178,7 @@ a, a span {
 .page-padding {height:90px; width:100%;}
 
 #page1{
-    padding-top: 200px;
+    padding: 50px;
     text-align: center;
 }
 #page1 h2 {
@@ -191,7 +220,7 @@ h1{
     /*min-height: 300px;*/
 }
 
-@media (min-width: 1325px) {
+@media (min-width: 1060px) {
     #slideshow {
         display: block;
         width: 1060px;
@@ -202,7 +231,7 @@ h1{
         position: relative;
     }
 }
-@media (min-width: 994px) and (max-width: 1324px) {
+@media (min-width: 795px) and (max-width: 1059px) {
     #slideshow {
         display: block;
         width: 795px;
@@ -213,7 +242,7 @@ h1{
         position: relative;
     }
 }
-@media (max-width:993px){
+@media (max-width:794px){
     #slideshow {
         display: block;
         width: 530px;
@@ -247,6 +276,9 @@ article{
 
 .item{
     display: inline-block;
+    /*for IE7 and older*/
+    *display: inline;
+    zoom: 1;
     float: left;
     height: 50%;
     position: relative;
@@ -347,7 +379,6 @@ article{
 
 #slideshow-testimonies{
     display: block;
-    height: 300px;
     width: 100%;
     margin: 0 auto;
     padding:0;
@@ -355,9 +386,10 @@ article{
     position: relative;
 }
 #page5 .pages{
-    position: absolute;
+    position: relative;
     left:0;
     top:0;
+    bottom:100px;
     /*min-height: 300px;*/
     width:100%;
 }
