@@ -298,6 +298,10 @@ article{
     width:265px;
     height: 265px;
 }
+.item-large {
+    width:530px;
+    height: 265px;
+}
 
 #projects a {
     color: #d9593d;
@@ -369,6 +373,15 @@ article{
      font-weight:800;
      line-height: 1em;
      text-transform: uppercase;
+}
+h3{
+    text-align: center;
+    margin-bottom: 40px;
+    color: #cca851;
+    font-size:18px;
+    font-weight:800;
+    line-height: 1em;
+    text-transform: uppercase;
 }
 
 #aboutme{
